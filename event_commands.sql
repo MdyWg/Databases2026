@@ -120,15 +120,15 @@ WHERE EventID = 'EV013';
 SELECT e.EventID, e.EventTitle, e.EventStartTime, e.EventEndTime,
        e.EventVisibility, c.ClubName, l.BuildingName, l.RoomNumber
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
-JOIN Location l ON e.LocationID = l.LocationID
+INNER JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Location l ON e.LocationID = l.LocationID
 WHERE e.EventStatus = 'Scheduled'
 ORDER BY e.EventStartTime;
 
 -- Search events by title keyword
 SELECT e.EventID, e.EventTitle, e.EventStartTime, c.ClubName
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Club c ON e.ClubID = c.ClubID
 WHERE e.EventTitle LIKE '%Workshop%';
 
 -- Filter events by club
@@ -140,21 +140,21 @@ ORDER BY EventStartTime;
 -- Filter events by event type
 SELECT e.EventID, e.EventTitle, e.EventStartTime, c.ClubName
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Club c ON e.ClubID = c.ClubID
 WHERE e.EventTypeID = 'ET001';
 
 -- Filter public events only
 SELECT e.EventID, e.EventTitle, e.EventStartTime, c.ClubName, l.BuildingName
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
-JOIN Location l ON e.LocationID = l.LocationID
+INNER JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Location l ON e.LocationID = l.LocationID
 WHERE e.EventVisibility = 'Public' AND e.EventStatus = 'Scheduled'
 ORDER BY e.EventStartTime;
 
 -- Filter events by date range
 SELECT e.EventID, e.EventTitle, e.EventStartTime, c.ClubName
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Club c ON e.ClubID = c.ClubID
 WHERE e.EventStartTime BETWEEN '2025-10-01' AND '2025-10-31';
 
 -- Get single event details (individual event page)
@@ -162,15 +162,15 @@ SELECT e.EventID, e.EventTitle, e.EventDescription, e.EventStartTime, e.EventEnd
        e.EventCapacity, e.EventVisibility, e.EventStatus,
        c.ClubName, l.BuildingName, l.RoomNumber, l.HomeAddress
 FROM Event e
-JOIN Club c ON e.ClubID = c.ClubID
-JOIN Location l ON e.LocationID = l.LocationID
+INNER JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN Location l ON e.LocationID = l.LocationID
 WHERE e.EventID = 'EV001';
 
 -- Get events a user has RSVP'd to
 SELECT e.EventID, e.EventTitle, e.EventStartTime, r.RSVPStatus, c.ClubName
 FROM Event e
-JOIN RSVP r ON e.EventID = r.EventID
-JOIN Club c ON e.ClubID = c.ClubID
+INNER JOIN RSVP r ON e.EventID = r.EventID
+INNER JOIN Club c ON e.ClubID = c.ClubID
 WHERE r.UserID = 'US001';
 
 -- Get RSVP count for an event
@@ -209,7 +209,7 @@ WHERE UserID = 'US001' AND EventID = 'EV006';
 -- Get all RSVPs for an event
 SELECT r.RSVPID, r.RSVPStatus, r.RSVPCreationDate, u.FirstName, u.LastName
 FROM RSVP r
-JOIN User u ON r.UserID = u.UserID
+INNER JOIN User u ON r.UserID = u.UserID
 WHERE r.EventID = 'EV001';
 
 -- Count RSVPs by status for an event
@@ -233,8 +233,8 @@ WHERE EventID = 'EV001' AND RSVPID = 'RS001';
 -- Get all attendees for an event
 SELECT u.FirstName, u.LastName, a.CheckInTime, a.CheckInMethod
 FROM Attendance a
-JOIN RSVP r ON a.RSVPID = r.RSVPID
-JOIN User u ON r.UserID = u.UserID
+INNER JOIN RSVP r ON a.RSVPID = r.RSVPID
+INNER JOIN User u ON r.UserID = u.UserID
 WHERE a.EventID = 'EV001';
 
 -- Count attendees for an event
