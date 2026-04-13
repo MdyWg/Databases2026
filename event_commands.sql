@@ -62,30 +62,30 @@ INSERT INTO Event (EventID, EventTitle, EventDescription, EventStartTime, EventE
 ('EV012', 'SWE Industry Panel', 'Hear from women engineers at Meta, Google, and Amazon about their career paths.', '2025-11-20 17:00:00', '2025-11-20 19:00:00', 70, 'Scheduled', 'Public', 'ET006', 'LO005', 'CL009');
 
 -- INSERT RSVPs
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS001', 'Going', '2025-10-10', 'US001', 'EV001');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS002', 'Going', '2025-10-11', 'US002', 'EV001');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS003', 'Tentative', '2025-10-12', 'US003', 'EV001');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS004', 'Going', '2025-10-18', 'US002', 'EV002');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS005', 'Going', '2025-10-30', 'US004', 'EV003');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS006', 'Going', '2025-09-25', 'US003', 'EV004');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS007', 'Going', '2025-10-05', 'US005', 'EV005');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS008', 'NotGoing', '2025-10-06', 'US006', 'EV005');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS009', 'Going', '2025-11-10', 'US007', 'EV006');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS010', 'Going', '2025-10-20', 'US008', 'EV007');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS011', 'Tentative', '2025-10-28', 'US009', 'EV008');
-INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS012', 'Going', '2025-09-15', 'US010', 'EV009');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS001', 'Going', '2025-10-10', 'U0001', 'EV001');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS002', 'Going', '2025-10-11', 'U0002', 'EV001');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS003', 'Tentative', '2025-10-12', 'U0003', 'EV001');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS004', 'Going', '2025-10-18', 'U0002', 'EV002');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS005', 'Going', '2025-10-30', 'U0004', 'EV003');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS006', 'Going', '2025-09-25', 'U0003', 'EV004');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS007', 'Going', '2025-10-05', 'U0005', 'EV005');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS008', 'NotGoing', '2025-10-06', 'U0006', 'EV005');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS009', 'Going', '2025-11-10', 'U0007', 'EV006');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS010', 'Going', '2025-10-20', 'U0008', 'EV007');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS011', 'Tentative', '2025-10-28', 'U0009', 'EV008');
+INSERT INTO RSVP (RSVPID, RSVPStatus, RSVPCreationDate, UserID, EventID) VALUES ('RS012', 'Going', '2025-09-15', 'U0010', 'EV009');
 
 -- INSERT ATTENDANCE
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-15 17:55:00', 'Manual', 'EV001', 'RS001');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-15 18:02:00', 'Manual', 'EV001', 'RS002');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-20 16:58:00', 'QRCode', 'EV002', 'RS004');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-11-05 13:50:00', 'Manual', 'EV003', 'RS005');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-09-28 10:55:00', 'QRCode', 'EV004', 'RS006');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-08 15:58:00', 'Manual', 'EV005', 'RS007');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-11-12 18:55:00', 'QRCode', 'EV006', 'RS009');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-22 17:50:00', 'Manual', 'EV007', 'RS010');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-09-18 14:55:00', 'QRCode', 'EV009', 'RS012');
-INSERT INTO Attendance (CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-01 11:50:00', 'Manual', 'EV010', 'RS012');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-15 17:55:00', 'Manual', 'EV001', 'RS001');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-15 18:02:00', 'Manual', 'EV001', 'RS002');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-20 16:58:00', 'QRCode', 'EV002', 'RS004');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-11-05 13:50:00', 'Manual', 'EV003', 'RS005');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-09-28 10:55:00', 'QRCode', 'EV004', 'RS006');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-08 15:58:00', 'Manual', 'EV005', 'RS007');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-11-12 18:55:00', 'QRCode', 'EV006', 'RS009');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-10-22 17:50:00', 'Manual', 'EV007', 'RS010');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-09-18 14:55:00', 'QRCode', 'EV009', 'RS012');
+INSERT INTO Attendance(CheckInTime, CheckInMethod, EventID, RSVPID) VALUES ('2025-11-01 11:50:00', 'Manual', 'EV008', 'RS011');
 
 
 -- SQL COMMANDS USED BY THE APP

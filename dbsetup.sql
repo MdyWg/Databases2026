@@ -98,17 +98,17 @@ CREATE TABLE RSVP (
     UserID CHAR(5),
     EventID CHAR(5),
     Primary Key (RSVPID),
+    UNIQUE (RSVPID, EventID),
     FOREIGN KEY (UserID) REFERENCES User(UserID),   
     FOREIGN KEY (EventID) REFERENCES Event(EventID)
-)
+);
 CREATE TABLE Attendance (
     CheckInTime TIMESTAMP,
     CheckInMethod VARCHAR(20),
     EventID CHAR(5),
     RSVPID CHAR(5),
-    Primary Key (EventID, RSVPID),
-    FOREIGN KEY (RSVPID) REFERENCES RSVP(RSVPID),
-    FOREIGN KEY (EventID) REFERENCES Event(EventID)
+    PRIMARY KEY (EventID, RSVPID),
+    FOREIGN KEY (RSVPID, EventID) REFERENCES RSVP(RSVPID, EventID)
 );
 
 -- do all insert commands here, minimum 10 entries per table, we should probably do the inserts for whatever
@@ -192,37 +192,36 @@ INSERT INTO ClubCategory (ClubID, CategoryID) VALUES ('CL010', 'CA009');
 -- ANNOUNCEMENTS
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
 ('AN001', 'Welcome!', 'We are excited to welcome new members to our club! Join us for our first meeting of the semester', 
-'2023-08-25', 'US001', 'CL001');
+'2023-08-25', 'U0001', 'CL001');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
 ('AN002', 'Upcoming Event: Networking Night', 'Join us for a night of networking with industry professionals!', 
-'2023-09-10', 'US001', 'CL001');
+'2023-09-10', 'U0001', 'CL001');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
 ('AN003', 'Volunteer Opportunity', 'We are looking for volunteers to help with our community service event next month. 
-Sign up if you are interested!', '2023-09-20', 'US002', 'CL009');
+Sign up if you are interested!', '2023-09-20', 'U0002', 'CL009');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
-('AN004', 'Study & Chill Session', 'Come hang out before finals!', '2023-12-01', 'US003', 'CL001');
+('AN004', 'Study & Chill Session', 'Come hang out before finals!', '2023-12-01', 'U0003', 'CL001');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
 ('AN005', 'Guest Speaker Event', 'We are excited to announce that we will be hosting a guest speaker from Google next week!',
-'2023-10-15', 'US001', 'CL009');
+'2023-10-15', 'U0001', 'CL009');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
-('AN006', 'Hackathon', 'Get ready for our hackathon! More details to come soon.', '2023-11-01', 'US004', 'CL007');
+('AN006', 'Hackathon', 'Get ready for our hackathon! More details to come soon.', '2023-11-01', 'U0004', 'CL007');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
 ('AN007', 'Volunteer Opportunity', 'Join us for a day of mentoring local high school students',
-'2023-10-05', 'US002', 'CL009');
+'2023-10-05', 'U0002', 'CL009');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
-('AN008', 'End of Semester Party', 'Join us for our end of semester party! Food and drinks will be provided.', '2023-12-15', 'US001', 'CL001');
+('AN008', 'End of Semester Party', 'Join us for our end of semester party! Food and drinks will be provided.', '2023-12-15', 'U0001', 'CL001');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
-('AN009', 'Resume Workshop', 'Join us for a resume workshop to help you prepare for your job search!', '2023-09-30', 'US002', 'CL002');
+('AN009', 'Resume Workshop', 'Join us for a resume workshop to help you prepare for your job search!', '2023-09-30', 'U0002', 'CL002');
 
 INSERT INTO Announcement (AnnouncementID, AnnouncementTitle, AnnouncementBody, AnnouncementDate, UserID, ClubID) VALUES 
-('AN010', 'Arduino Workshop', 'Learn the basics of Arduino programming and build your first project!', '2023-10-20', 'US002', 'CL008');
-
+('AN010', 'Arduino Workshop', 'Learn the basics of Arduino programming and build your first project!', '2023-10-20', 'U0002', 'CL008');
 
