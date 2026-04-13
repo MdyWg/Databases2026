@@ -8,7 +8,6 @@ CREATE TABLE User (
     Email VARCHAR(20),
     PasswordHash CHAR(20),
     AccountCreationDate DATE,
-    -- AccountStatus idk what datatype, maybe boolean?
     Primary Key (UserID)
 );
 CREATE TABLE Category (
@@ -46,7 +45,7 @@ CREATE TABLE ClubMembership (
     UserID CHAR(5),
     ClubID CHAR(5),
     MembershipRole VARCHAR(20),
-    MembershipStatus VARCHAR(10), -- maybe boolean?
+    MembershipStatus VARCHAR(10),
     MembershipJoinDate DATE,
     Primary Key (UserID, ClubID),
     FOREIGN KEY (UserID) REFERENCES User(UserID),
@@ -82,7 +81,7 @@ CREATE TABLE Event (
     EventStartTime TIMESTAMP,
     EventEndTime TIMESTAMP,
     EventCapacity INT,
-    EventStatus --idk datatype, 
+    EventStatus VARCHAR(10),
     EventVisibility VARCHAR(10), 
     EventTypeID CHAR(5),
     LocationID CHAR(5),
